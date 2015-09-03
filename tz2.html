@@ -1,0 +1,123 @@
+<head>
+  <title>Active Timezones</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+	    {{> loginButtons}}
+      <div class="header">Active Timezones</div>
+
+      {{#if currentUser}}
+      <!--  Only display the header for someone who's logged in -->
+      {{#if isUserNew}}
+      {{> newuserform}}
+      {{/if}}
+      <table><tr>
+        <td>
+          {{> activeUserCircle}} </td>
+        <td>
+          <form class="timezoneselectform">
+          <label for="timezoneselect" class="picker-label">I'M CURRENTLY IN</label>
+           <select id="timezoneselect" name="timezoneselect"
+                class="timezoneselect">
+              <option disabled="disabled" selected="selected">Please Select</option>
+                {{#each timezones}}
+                    {{> timezoneoption}}
+                {{/each}}
+          </select>
+        </form>
+        </td>
+      </tr></table>
+      {{/if}}
+    </header>
+    <ul class="timezone">
+      {{#each timezones}}
+        {{> timezone}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<!-- Templates -->
+
+<template name="timezone">
+  <!--Only display timezones where people are -->
+  {{#if isUsersInTimezone _id}}
+  <li class="timezone">
+    <table><tr>
+      <td><h2>{{text}}</h2></td><td class="time">{{localTime}} (GMT {{utcOffset}})
+      </td>
+    </tr></table>
+    <ul class="user">
+    {{#each usersInTimezone _id}}
+      <li class="user">
+          &bull; {{displayName}} ({{jobTitle}}), {{location}}   {{#if isAdmin currentUser.username}} <button class="delete">&times;</button> {{/if}} </li>
+        {{/each}}
+    </ul>
+  </li>
+  {{/if}}
+</template>
+
+<template name="timezoneoption">
+  <option class="timezoneoption" value={{_id}}>{{text}}</option>
+</template>
+
+<template name="timezoneselector">
+  <option value={{text}}>{{text}}</option>
+</template>
+
+<template name="timezoneselectortwo">
+    <form id="tzFilter">
+        <select id="tzpicker">
+          {{#each timezones}}
+            <!-- {{#if has users}} -->
+            <option class="menuitem" selected value="{{this._id}}">{{this.text}}</option>
+            {{/each}}
+          </select>
+        </form>
+  </template>
+
+<template name="newuserform">
+  <form class="newuserinputform">
+    <h1>Welcome, {{currentUser.username}}! Please enter your information:</h1>
+    <div>
+        <label for="q_first_name">
+            First name:
+        </label>
+        <input name="q_first_name" id="q_first_name" placeholder="John..." class="inputforminner" autofocus="1"/>
+    </div>
+    <div>
+        <label for="q_last_name">
+            Last name:
+        </label>
+        <input name="q_last_name" id="q_last_name" placeholder="Smith..." class="inputforminner" autofocus="1"/>
+    </div>
+    <div>
+        <label for="q_current_location">Current location (City, State/Country):</label>
+        <input name="q_current_location" id="q_current_location" placeholder="Los Angeles, CA..." class="inputforminner"/>
+    </div>
+    <div>
+        <label for="q_job_title">Job Title:</label>
+        <input name="q_job_title" id="q_job_title" placeholder="Super Jave Slinger" class="inputforminner"/>
+    </div>
+    <div>
+      <!-- pass in the user name in a hidden input -->
+      <input name="q_username" id="q_username" value="foofoofoo" type="hidden"/>
+    </div>
+    <div>
+        <input type="submit" value="submit" id="adduserinfo" class="inputformsubmit"/>
+    </div>
+</form>
+</template>
+
+<template name="activeUserCircle">
+  <div class="container">
+    <canvas id="activeUserCanvas" width="60" height="60">Your browser does not support HTML5 Canvas. Please update your browser to the latest version.</canvas>
+  </div>
+</template>
+
+
+<template name ="foo">
+<canvas id="lineChart" width="400" height="400"></canvas>
+</template>

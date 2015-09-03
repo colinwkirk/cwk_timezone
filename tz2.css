@@ -1,0 +1,266 @@
+/* CSS declarations go here */
+body {
+  font-family: "Trade Gothic W01", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 200;
+  font-style: normal
+  color: #454545;
+  /*background-color: #f9fafe;*/
+  background-color: #a1d7b8;
+  /*background-image: linear-gradient(to bottom, #a1d7b8, #009b40 100%);*/
+  background-attachment: fixed;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200
+}
+
+h1.activetz {
+  color: #009a44;
+}
+
+.container {
+  max-width: 650px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: #a1d7b8;
+}
+
+header {
+  background: #a1d7b8;
+  /*background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%); */
+  padding: 20px 15px 0px 15px;
+  position: relative;
+}
+
+x
+#login-buttons {
+  display: block;
+
+}
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+form.newuserinputform {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}
+
+.new-task input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
+}
+
+.new-task input:focus{
+  outline: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background: #a1d7b8;
+}
+
+ul.newuserinputform{
+  position: center;
+}
+
+
+
+ul.timezone {
+  background: #a1d7b8;
+}
+
+ul.user {
+  background: white;
+}
+
+.delete {
+  float: right;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
+}
+
+
+
+li.timezone {
+  box-shadow: 2px 1px 3px #888888;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+  margin: 0 20px 15px 20px;
+  background: white;
+}
+
+.newuserinputform {
+  box-shadow: 2px 1px 3px #888888;
+  border-radius: 10px;
+  border: none;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+  background: white;
+  width: 30%;
+  margin: auto;
+}
+
+.inputforminner {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.inputformsubmit {
+  width: 90%;
+  height: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 5px;
+  color: white;
+  background-color: #3b5998;
+  font-family: "Trade Gothic W01", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 18px;
+
+
+}
+
+li.user{
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  border-bottom: none;
+  list-style: none;
+  margin: 0 20px 5px 20px;
+}
+
+li .text {
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  li {
+    padding: 12px 15px;
+  }
+
+  .search {
+    width: 150px;
+    clear: both;
+  }
+
+  .new-task input {
+    padding-bottom: 5px;
+  }
+}
+table {
+  width: 100%;
+}
+td {
+  width: 50%;
+}
+
+td.time {
+  text-align: right;
+}
+
+td.circl{
+  width: 20%
+}
+
+
+select {
+  box-shadow: 1px 1px 1px #888888;
+  /*margin-bottom: 60px;*/
+}
+
+label {
+  display: block;
+}
+
+div.header {
+  text-align: center;
+  box-shadow: none;
+  border-radius: 10px;
+  border: 1px;
+  border-bottom: none;
+  list-style: none;
+  width: 70%;
+  margin: auto;
+  font-size: 32px;
+
+}
+
+#nav {
+	width: 100%;
+	float: left;
+	margin: 0 0 3em 0;
+	padding: 0;
+	list-style: none;
+	background-color: #f2f2f2;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+  height:80px;
+}
+#nav li {
+	float: left;
+  padding: 10px;
+  font-weight: bold;
+  border-right: 1px  solid #ccc;
+}
+#nav li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #069;
+	border-right: 1px  solid #ccc; }
+#nav li a:hover {
+	color: #c00;
+	background-color: #fff; }
+
+.error, .required{ color: red; }
+input[type=submit]{ margin-top: 20px; }
+/*input, select{ margin-right: 20px; }*/
+
+.user {
+  font-family: "Trade Gothic W01", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 200;
+  font-style: normal
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+
+  font-size: 18px;
+}
+}
